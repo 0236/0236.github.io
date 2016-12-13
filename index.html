@@ -196,6 +196,83 @@
 
 
   
+    <article id="post-spider" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/09/spider/">WebMagic(爬虫)</a>
+    </h1>
+  
+
+        <a href="/2016/12/09/spider/" class="archive-article-date">
+  	<time datetime="2016-12-09T09:24:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-09</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="爬虫文档"><a href="#爬虫文档" class="headerlink" title="爬虫文档"></a><a href="http://webmagic.io/docs/zh/" target="_blank" rel="external">爬虫文档</a></h2><h2 id="爬虫核心"><a href="#爬虫核心" class="headerlink" title="爬虫核心"></a>爬虫核心</h2><h3 id="1-url管理器（Scheduler）"><a href="#1-url管理器（Scheduler）" class="headerlink" title="1. url管理器（Scheduler）"></a>1. url管理器（Scheduler）</h3><blockquote>
+<ul>
+<li>负责待爬页面的link管理</li>
+<li>新抓取的link</li>
+<li>link去重复</li>
+</ul>
+</blockquote>
+<h3 id="2-下载器（Downloader）"><a href="#2-下载器（Downloader）" class="headerlink" title="2. 下载器（Downloader）"></a>2. 下载器（Downloader）</h3><blockquote>
+<ul>
+<li>负责从网页上下载页面</li>
+<li>使用Apache HttpClient 作为下载工具</li>
+<li>由于是访问网页，可能会出现超时返回错误等异常，需要异常处理</li>
+</ul>
+</blockquote>
+<h3 id="3-解析器（PageProcessor）"><a href="#3-解析器（PageProcessor）" class="headerlink" title="3. 解析器（PageProcessor）"></a>3. 解析器（PageProcessor）</h3><blockquote>
+<ul>
+<li>负责解析页面，抽取需要的数据信息，发现新link</li>
+<li>使用jsoup作为解析html的工具</li>
+<li>每个PageProcessor都需要开发者自己定制</li>
+</ul>
+</blockquote>
+<h3 id="4-结果处理器（Pipeline和HandleResult）"><a href="#4-结果处理器（Pipeline和HandleResult）" class="headerlink" title="4. 结果处理器（Pipeline和HandleResult）"></a>4. 结果处理器（Pipeline和HandleResult）</h3><blockquote>
+<ul>
+<li>Pipeline负责抽取结果的处理</li>
+<li>可以把结果做包括计算、持久化到文件、数据库等处理</li>
+<li>由于绝大部分真正需要的数据都是不同的页面组合，所以我加了一个处理结果的步骤HandleResult，该步骤在所有爬虫任务结束后执行，需要开发者自己定制</li>
+</ul>
+</blockquote>
+<h3 id="5-监控"><a href="#5-监控" class="headerlink" title="5. 监控"></a>5. 监控</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/12/09/spider/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+  
   
 
 

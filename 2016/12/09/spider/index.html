@@ -6,17 +6,66 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//0236.github.io">
-  <title>Archives | orc的博客</title>
+  <title>WebMagic(爬虫) | orc的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="就职于链家上海研发中心">
-<meta property="og:type" content="website">
-<meta property="og:title" content="orc的博客">
-<meta property="og:url" content="//0236.github.io/archives/index.html">
+  <meta name="description" content="爬虫文档爬虫核心1. url管理器（Scheduler）
+
+负责待爬页面的link管理
+新抓取的link
+link去重复
+
+
+2. 下载器（Downloader）
+
+负责从网页上下载页面
+使用Apache HttpClient 作为下载工具
+由于是访问网页，可能会出现超时返回错误等异常，需要异常处理
+
+
+3. 解析器（PageProcessor）
+
+负责解析页面，抽取需要的数据信息，发现新link">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebMagic(爬虫)">
+<meta property="og:url" content="//0236.github.io/2016/12/09/spider/index.html">
 <meta property="og:site_name" content="orc的博客">
-<meta property="og:description" content="就职于链家上海研发中心">
+<meta property="og:description" content="爬虫文档爬虫核心1. url管理器（Scheduler）
+
+负责待爬页面的link管理
+新抓取的link
+link去重复
+
+
+2. 下载器（Downloader）
+
+负责从网页上下载页面
+使用Apache HttpClient 作为下载工具
+由于是访问网页，可能会出现超时返回错误等异常，需要异常处理
+
+
+3. 解析器（PageProcessor）
+
+负责解析页面，抽取需要的数据信息，发现新link">
+<meta property="og:updated_time" content="2016-12-13T06:11:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="orc的博客">
-<meta name="twitter:description" content="就职于链家上海研发中心">
+<meta name="twitter:title" content="WebMagic(爬虫)">
+<meta name="twitter:description" content="爬虫文档爬虫核心1. url管理器（Scheduler）
+
+负责待爬页面的link管理
+新抓取的link
+link去重复
+
+
+2. 下载器（Downloader）
+
+负责从网页上下载页面
+使用Apache HttpClient 作为下载工具
+由于是访问网页，可能会出现超时返回错误等异常，需要异常处理
+
+
+3. 解析器（PageProcessor）
+
+负责解析页面，抽取需要的数据信息，发现新link">
   
     <link rel="alternative" href="/atom.xml" title="orc的博客" type="application/atom+xml">
   
@@ -136,76 +185,112 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-spider" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/09/hello-world/" class="archive-article-date">
-  	<time datetime="2016-12-09T09:24:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-09</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/09/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      WebMagic(爬虫)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/09/spider/" class="archive-article-date">
+        <a href="/2016/12/09/spider/" class="archive-article-date">
   	<time datetime="2016-12-09T09:24:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/09/spider/">WebMagic(爬虫)</a>
-    </h1>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="爬虫文档"><a href="#爬虫文档" class="headerlink" title="爬虫文档"></a><a href="http://webmagic.io/docs/zh/" target="_blank" rel="external">爬虫文档</a></h2><h2 id="爬虫核心"><a href="#爬虫核心" class="headerlink" title="爬虫核心"></a>爬虫核心</h2><h3 id="1-url管理器（Scheduler）"><a href="#1-url管理器（Scheduler）" class="headerlink" title="1. url管理器（Scheduler）"></a>1. url管理器（Scheduler）</h3><blockquote>
+<ul>
+<li>负责待爬页面的link管理</li>
+<li>新抓取的link</li>
+<li>link去重复</li>
+</ul>
+</blockquote>
+<h3 id="2-下载器（Downloader）"><a href="#2-下载器（Downloader）" class="headerlink" title="2. 下载器（Downloader）"></a>2. 下载器（Downloader）</h3><blockquote>
+<ul>
+<li>负责从网页上下载页面</li>
+<li>使用Apache HttpClient 作为下载工具</li>
+<li>由于是访问网页，可能会出现超时返回错误等异常，需要异常处理</li>
+</ul>
+</blockquote>
+<h3 id="3-解析器（PageProcessor）"><a href="#3-解析器（PageProcessor）" class="headerlink" title="3. 解析器（PageProcessor）"></a>3. 解析器（PageProcessor）</h3><blockquote>
+<ul>
+<li>负责解析页面，抽取需要的数据信息，发现新link</li>
+<li>使用jsoup作为解析html的工具</li>
+<li>每个PageProcessor都需要开发者自己定制</li>
+</ul>
+</blockquote>
+<h3 id="4-结果处理器（Pipeline和HandleResult）"><a href="#4-结果处理器（Pipeline和HandleResult）" class="headerlink" title="4. 结果处理器（Pipeline和HandleResult）"></a>4. 结果处理器（Pipeline和HandleResult）</h3><blockquote>
+<ul>
+<li>Pipeline负责抽取结果的处理</li>
+<li>可以把结果做包括计算、持久化到文件、数据库等处理</li>
+<li>由于绝大部分真正需要的数据都是不同的页面组合，所以我加了一个处理结果的步骤HandleResult，该步骤在所有爬虫任务结束后执行，需要开发者自己定制</li>
+</ul>
+</blockquote>
+<h3 id="5-监控"><a href="#5-监控" class="headerlink" title="5. 监控"></a>5. 监控</h3>
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+  
+<nav id="article-nav">
+  
+    <a href="/2016/12/09/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+
+
+
+
+
+
+<section id="comments">
+<!-- 多说评论框 start -->
+  <div class="ds-thread" style="padding: 30px;" data-thread-key="post-spider" data-title="WebMagic(爬虫)" 
+  data-url="//0236.github.io/2016/12/09/spider/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"orc"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+</section>
+
 
 
           </div>
@@ -228,8 +313,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
